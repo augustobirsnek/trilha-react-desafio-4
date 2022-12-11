@@ -28,6 +28,10 @@ const Login = () => {
     reValidateMode: "onChange",
   });
 
+  const onSubmit = () => {
+    alert("Sem erros no formulário");
+  };
+
   return (
     <Container>
       <LoginContainer>
@@ -36,6 +40,7 @@ const Login = () => {
           <Spacing />
           <Input
             name="email"
+            id="email"
             placeholder="Email"
             control={control}
             errorMessage={errors?.email?.message}
@@ -49,7 +54,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" isValid={isValid} onClick={onSubmit} />
         </Column>
       </LoginContainer>
     </Container>
